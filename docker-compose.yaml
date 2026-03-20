@@ -25,7 +25,6 @@ services:
 
 networks:
   vpn-server-network:
-    internal: true
     ipam:
         config:
           - subnet: 172.10.0.0/24
