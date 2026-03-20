@@ -1,0 +1,20 @@
+services:
+
+  vpn-server:
+    container_name: vpn-server
+    image: ghcr.io/wgdashboard/wgdashboard:latest
+    restart: always
+    ports:
+      - 51820:51820/udp
+    volumes:
+      - ~/Server/data/vpn_server/amnezia_conf:/etc/amnezia/amneziawg
+      - ~/Server/data/vpn_server/wireguard_conf:/etc/wireguard
+      - ~/Server/data/vpn_server/data:/data
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.ip_forward=1
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - username=admin
+      - password=12345
