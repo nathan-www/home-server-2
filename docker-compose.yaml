@@ -20,7 +20,7 @@ services:
       - password=12345
     networks:
       vpn-server-network:
-        ipv4_address: 172.10.0.1
+        ipv4_address: 172.10.0.10
 
 networks:
   vpn-server-network:
