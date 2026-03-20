@@ -18,3 +18,13 @@ services:
     environment:
       - username=admin
       - password=12345
+    networks:
+      vpn-server-network:
+        ipv4_address: 172.10.0.1
+
+networks:
+  vpn-server-network:
+    internal: true
+    ipam:
+        config:
+          - subnet: 172.10.0.0/24
