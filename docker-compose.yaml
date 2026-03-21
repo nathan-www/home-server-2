@@ -6,7 +6,6 @@ services:
     restart: always
     ports:
       - 51820:51820/udp
-      - 10086:10086/tcp
     volumes:
       - ~/Server/data/vpn_server/amnezia_conf:/etc/amnezia/amneziawg
       - ~/Server/data/vpn_server/wireguard_conf:/etc/wireguard
